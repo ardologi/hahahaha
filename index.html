@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi...</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="stars"></canvas>
+
+    <div class="heart-wrapper">
+      <svg class="heart" viewBox="0 0 200 200" id="heart">
+        <defs>
+          <radialGradient id="glowGradient" cx="50%" cy="40%" r="70%">
+            <stop offset="0%" stop-color="#ffbcd9" />
+            <stop offset="40%" stop-color="#ff3370" />
+            <stop offset="100%" stop-color="#b30047" />
+          </radialGradient>
+          <filter id="softGlow">
+            <feGaussianBlur stdDeviation="15" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <path
+          d="M100 180
+        C 40 120, 0 80, 50 40
+        A 30 30 0 0 1 100 60
+        A 30 30 0 0 1 150 40
+        C 200 80, 160 120, 100 180 Z"
+          fill="url(#glowGradient)"
+          filter="url(#softGlow)"
+        />
+      </svg>
+
+      <div class="audio-bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+
+    <canvas id="particles"></canvas>
+    <audio id="bg-music" src="AduRayu.mp3" autoplay loop></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
